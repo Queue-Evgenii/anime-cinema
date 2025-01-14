@@ -1,0 +1,10 @@
+.header-default {
+  position: fixed;
+  width: 100%;
+
+  background-color: #23252b;
+  padding: 16px 0;
+}
+.header-default-logo {
+  max-width: 150px;
+}

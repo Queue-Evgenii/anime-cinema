@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('animeCinemaApp')
+angular.module('defaultLayout')
   .directive('defaultLayout', function() {
     return {
       restrict: 'E',
