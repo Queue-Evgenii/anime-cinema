@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('defaultLayout')
-  .directive('defaultLayout', function() {
+  .directive('defaultLayout', () =>  {
     return {
       restrict: 'E',
       transclude: true,

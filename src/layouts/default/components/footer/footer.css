@@ -1,0 +1,31 @@
+.footer-default__top,
+.footer-default__bottom {
+  padding: 24px 0;
+}
+
+.footer-default__top {
+  border-bottom: 1px solid #4a4e58;
+}
+
+.footer-default__top nav h4 {
+  margin-bottom: 1.5rem;
+}
+.footer-default__top nav li,
+.footer-default__bottom h3,
+.footer-default__bottom div {
+  color: rgb(160, 160, 160);
+}
+
+.footer-default__top nav a { transition: color .2s ease; }
+@media(min-width: 769px) {
+  .footer-default__top nav a:hover, 
+  .footer-default__top nav a:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.footer-default__bottom h3 span,
+.footer-default__bottom div {
+  text-transform: uppercase;
+}

@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('headerDefault')
-  .directive('headerDefault', function() {
+  .directive('headerDefault', () =>  {
     return {
       restrict: 'E',
       transclude: true,

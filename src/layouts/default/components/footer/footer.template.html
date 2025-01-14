@@ -1,0 +1,22 @@
+<footer class="footer-default">
+  <div class="_container">
+    <header class="_flex _jc-sb _gap-32 footer-default__top">
+      <nav ng-repeat="item in lists">
+        <h4>{{ item.name }}</h4>
+        <ul class="_flex _f-dir-col _gap-16">
+          <li ng-repeat="subitem in item.items">
+            <a href="">{{ subitem }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <footer class="_flex _jc-sb _gap-32 footer-default__bottom">
+      <h3>
+        <span>Fake all!</span> @ Portfolio, Non commercial!
+      </h3>
+      <div>
+        Language picker
+      </div>
+    </footer>
+  </div>
+</footer>

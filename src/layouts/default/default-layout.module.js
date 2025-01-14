@@ -1,5 +1,6 @@
 'use strict'
 
 angular.module('defaultLayout', [
-  'headerDefault'
+  'headerDefault',
+  'footerDefault',
 ]);
