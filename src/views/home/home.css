@@ -1,0 +1,27 @@
+.main-slider__title {
+  font-size: 2rem;
+  color: #e0e0e0;
+}
+.main-slider__title-en {
+  font-size: 1.875rem;
+  color: #808080;
+}
+.main-slider__title,
+.main-slider__title-en {
+  line-height: 1.25;
+}
+
+
+.main-slider__rating {
+  padding: 4px 8px;
+  color: #e0e0e0;
+  background-color: #23252b;
+  border-radius: 4px;
+}
+.main-slider__genres {
+  color: #a0a0a0;
+}
+
+.main-slider__score span {
+  color: #ff640a;
+}

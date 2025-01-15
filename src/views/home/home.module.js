@@ -1,12 +1,26 @@
 'use strict';
 
 angular.module('homeView', [
+    'api',
     'slider',
   ])
-  .controller('homeController', ['$scope', function($scope) {
-    $scope.slides = [ 1, 2, 3, 4, 5 ];
+  .controller('homeController', ['$scope', 'animeApi', function($scope, animeApi) {
+    $scope.slides = [];
     $scope.options = {
-      slidePerView: 4,
+      slidePerView: 1,
       swipe: true,
     };
+
+    animeApi
+      .getTopAnime({
+        filter: 'bypopularity'
+      })
+      .then(data => {
+        $scope.$apply(function() {
+          $scope.slides = data.data.slice(0, 10);
+        });
+      })
+      .catch(err =>
+        console.log('getTopAnime Err', err)
+      )
   }]);

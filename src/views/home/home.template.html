@@ -1,8 +1,34 @@
-<h2>Home Page</h2>
-<div class="_container">
-  <slider options="options">
-    <div ng-repeat="item in slides">
-      {{item}}
-    </div>
-  </slider>
-</div>
+<section ng-if="slides.length > 0" class="main-slider">
+  <div class="_container">
+    <slider options="options">
+      <div ng-repeat="item in slides" class="_flex _ai-e _px-64">
+        <div class="main-slider__info _flex-auto-70">
+          <div class="_pb-8">
+            <h2 class="main-slider__title">{{ item.title }}</h2>
+            <h3 ng-if="item.title !== item.title_english" class="main-slider__title-en">{{ item.title_english }}</h3>
+          </div>
+          <div class="_flex _ai-c _gap-16 _pb-8">
+            <h4 class="main-slider__rating">{{ item.rating }}</h4>
+            <span>|</span>
+            <div class="main-slider__genres _flex _ai-c _gap-8">
+              <h4>{{ item.themes | joinThemes }}</h4>
+              <span>✦</span>
+              <h4>{{ item.demographics | joinThemes }}</h4>
+            </div>
+          </div>
+          <h4 class="main-slider__score _pb-16">
+            <span>★</span>
+            {{ item.score }} / 10
+          </h4>
+          <div class="main-slider__actions">
+            <button>Start watching EP1</button>
+            <button>Watch later</button>
+          </div>
+        </div>
+        <div class="_image">
+          <img ng-src="{{item.images.jpg.large_image_url}}" alt="">
+        </div>
+      </div>
+    </slider>
+  </div>
+</section>

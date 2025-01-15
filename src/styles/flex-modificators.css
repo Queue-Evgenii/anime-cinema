@@ -8,6 +8,9 @@
 ._ai-c {
   align-items: center;
 }
+._ai-e {
+  align-items: end;
+}
 
 ._jc-c {
   justify-content: center;
@@ -34,4 +37,7 @@
 }
 ._flex-full {
   flex: 1 1 100%;
+}
+._flex-auto-70 {
+  flex: 1 1 70%;
 }
