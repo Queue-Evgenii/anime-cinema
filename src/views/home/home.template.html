@@ -1,4 +1,8 @@
 <h2>Home Page</h2>
-<div class="slider">
-  <slider slides="slides" options="options" root=".slider"></slider>
+<div class="_container">
+  <slider options="options">
+    <div ng-repeat="item in slides">
+      {{item}}
+    </div>
+  </slider>
 </div>

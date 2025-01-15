@@ -4,7 +4,7 @@ angular.module('slider')
   .controller(
     'sliderController', [
       '$scope', '$timeout', 'navigation', 'swipe',
-      function($scope, $timeout, navigation, swipe) {
+      ($scope, $timeout, navigation, swipe) => {
         
         const defaultOptions = {
           slidePerView: 1,
@@ -16,12 +16,16 @@ angular.module('slider')
         $timeout(() => {
           $scope.options = { ...defaultOptions, ...$scope.options };
 
-          const root = document.querySelector($scope.root);
-
-          const slider = root.querySelector('.slider-wrapper');
-          const slides = slider.querySelectorAll('.slider-slide');
-          const prevBtn = root.querySelector('.slider-prev-btn');
-          const nextBtn = root.querySelector('.slider-next-btn');
+          const slider = $scope.root.querySelector('.slider-wrapper');
+          const slides = [...slider.childNodes]
+            .filter(item => item.nodeType === 1)
+            .map(item => {
+              item.classList.add('slider-slide');
+              return item;
+            });
+          
+          const prevBtn = $scope.root.querySelector('.slider-prev-btn');
+          const nextBtn = $scope.root.querySelector('.slider-next-btn');
 
           let currentIndex = 0;
           const slideWidth = 100 / $scope.options.slidePerView;
