@@ -5,7 +5,7 @@ angular.module('footerDefault')
     $scope.lists = [
       {
         name: 'Navigation',
-        items: ['Popular', 'Seasons', 'Schedulr', 'News', 'Games']
+        items: ['Popular', 'Seasons', 'Schedule', 'News', 'Games']
       },
       {
         name: 'Contact Us',

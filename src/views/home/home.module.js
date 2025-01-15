@@ -1,6 +1,12 @@
 'use strict';
 
-angular.module('homeView', [])
-.controller('homeController', function($scope) {
-  $scope.message = "Welcome to the Home Page!";
-});
+angular.module('homeView', [
+    'slider',
+  ])
+  .controller('homeController', ['$scope', function($scope) {
+    $scope.slides = [ 1, 2, 3, 4, 5 ];
+    $scope.options = {
+      slidePerView: 4,
+      swipe: true,
+    };
+  }]);
