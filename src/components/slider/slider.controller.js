@@ -3,14 +3,17 @@
 angular.module('sliderModule')
   .controller(
     'sliderController', [
-      '$scope', '$timeout', 'navigation', 'swipe',
-      ($scope, $timeout, navigation, swipe) => {
+      '$scope', '$timeout', 'directionStates', 'navigation', 'swipe', 'autoplay',
+      ($scope, $timeout, directionStates, navigation, swipe, autoplay) => {
         
         const defaultOptions = {
           slidePerView: 1,
           swipe: false,
           navigation: true,
           swipeOffset: 50,
+          autoplay: false,
+          autoplayInterval: 3000,
+          autoplayDirection: directionStates.NORMAL
         };
 
         $timeout(() => {
@@ -56,6 +59,34 @@ angular.module('sliderModule')
               () => currentIndex,
               (index) => { currentIndex = index; },
             );
+          }
+
+          if ($scope.options.autoplay) {
+            const autoplayStart = () => {
+              autoplay.setup(
+                slider,
+                slides,
+                slideWidth,
+                $scope.options,
+                () => currentIndex,
+                (index) => { currentIndex = index; },
+              )
+            }
+            const autoplayStop = () => {
+              autoplay.stop()
+            }
+
+            autoplayStart();
+
+            slider.addEventListener('mouseenter', autoplayStop);
+            slider.addEventListener('mouseleave', autoplayStart);
+
+            $scope.$on('$destroy', function() {
+              autoplayStop();
+
+              slider.removeEventListener('mouseenter', autoplayStop);
+              slider.removeEventListener('mouseleave', autoplayStart);
+            });
           }
         });
       }

@@ -25,15 +25,14 @@ angular.module('sliderModule')
         isDragging = false;
         slider.style.transition = 'transform 0.5s ease-in-out';
 
+        let newIndex = 0;
         if (currentX > options.swipeOffset) {
-          const newIndex = (currentIndex() === 0) ? slides.length - options.slidePerView : currentIndex() - 1;
-          setCurrentIndex(newIndex);
+          newIndex = sliderUtils.prevSlideIndex(currentIndex, slides, options.slidePerView, setCurrentIndex);
         } else if (currentX < -options.swipeOffset) {
-          const newIndex = (currentIndex() >= slides.length - options.slidePerView) ? 0 : currentIndex() + 1;
-          setCurrentIndex(newIndex);
+          newIndex = sliderUtils.nextSlideIndex(currentIndex, slides, options.slidePerView, setCurrentIndex);
         }
 
-        sliderUtils.updateSliderPosition(slider, currentIndex(), slideWidth);
+        sliderUtils.updateSliderPosition(slider, newIndex, slideWidth);
       };
 
       slider.addEventListener('touchstart', (e) => startInteraction(e.touches[0].clientX));

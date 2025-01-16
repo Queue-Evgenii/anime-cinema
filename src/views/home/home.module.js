@@ -11,6 +11,7 @@ angular.module('homeView', [
     $scope.options = {
       slidePerView: 1,
       swipe: true,
+      autoplay: true,
     };
 
     $scope.handleClick = function() {

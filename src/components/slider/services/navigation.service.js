@@ -9,14 +9,12 @@ angular.module('sliderModule')
       }
 
       prevBtn.addEventListener('click', () => {
-        const newIndex = (currentIndex() === 0) ? slides.length - options.slidePerView : currentIndex() - 1;
-        setCurrentIndex(newIndex);
+        const newIndex = sliderUtils.prevSlideIndex(currentIndex, slides, options, setCurrentIndex);
         sliderUtils.updateSliderPosition(slider, newIndex, slideWidth);
       });
 
       nextBtn.addEventListener('click', () => {
-        const newIndex = (currentIndex() >= slides.length - options.slidePerView) ? 0 : currentIndex() + 1;
-        setCurrentIndex(newIndex);
+        const newIndex = sliderUtils.nextSlideIndex(currentIndex, slides, options, setCurrentIndex);
         sliderUtils.updateSliderPosition(slider, newIndex, slideWidth);
       });
     };
