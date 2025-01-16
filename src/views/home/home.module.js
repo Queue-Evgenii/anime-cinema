@@ -2,7 +2,9 @@
 
 angular.module('homeView', [
     'api',
-    'slider',
+    'sliderModule',
+    'buttonModule',
+    'linkModule'
   ])
   .controller('homeController', ['$scope', 'animeApi', function($scope, animeApi) {
     $scope.slides = [];
@@ -10,6 +12,10 @@ angular.module('homeView', [
       slidePerView: 1,
       swipe: true,
     };
+
+    $scope.handleClick = function() {
+      console.log(123);
+    }
 
     animeApi
       .getTopAnime({
@@ -22,5 +28,6 @@ angular.module('homeView', [
       })
       .catch(err =>
         console.log('getTopAnime Err', err)
-      )
+      );
+
   }]);

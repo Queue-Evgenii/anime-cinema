@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('slider')
+angular.module('sliderModule')
   .service('navigation', ['sliderUtils', function(sliderUtils) {
     this.setup = function(prevBtn, nextBtn, slider, slides, slideWidth, options, currentIndex, setCurrentIndex) {
       if (options.slidePerView <= 0 || options.slidePerView >= slides.length) {

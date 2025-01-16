@@ -1,7 +1,7 @@
 'use strict'
 
-angular.module('slider')
-  .directive('slider', () => {
+angular.module('sliderModule')
+  .directive('sliderComponent', () => {
     return {
       restrict: 'E',
       scope: {

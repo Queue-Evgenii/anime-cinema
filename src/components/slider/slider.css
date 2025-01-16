@@ -26,9 +26,11 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 10px;
   cursor: pointer;
   z-index: 2;
+}
+.slider-button i {
+  font-size: 48px;
 }
 
 .slider-prev-btn {

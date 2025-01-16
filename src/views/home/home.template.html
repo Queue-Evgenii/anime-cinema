@@ -1,13 +1,13 @@
 <section ng-if="slides.length > 0" class="main-slider">
   <div class="_container">
-    <slider options="options">
+    <slider-component options="options">
       <div ng-repeat="item in slides" class="_flex _ai-e _px-64">
-        <div class="main-slider__info _flex-auto-70">
-          <div class="_pb-8">
+        <div class="main-slider__info _flex-70-auto">
+          <div class="_pb-16">
             <h2 class="main-slider__title">{{ item.title }}</h2>
             <h3 ng-if="item.title !== item.title_english" class="main-slider__title-en">{{ item.title_english }}</h3>
           </div>
-          <div class="_flex _ai-c _gap-16 _pb-8">
+          <div class="_flex _ai-c _gap-16 _pb-16">
             <h4 class="main-slider__rating">{{ item.rating }}</h4>
             <span>|</span>
             <div class="main-slider__genres _flex _ai-c _gap-8">
@@ -16,19 +16,32 @@
               <h4>{{ item.demographics | joinThemes }}</h4>
             </div>
           </div>
-          <h4 class="main-slider__score _pb-16">
+          <h4 class="main-slider__score _pb-32">
             <span>★</span>
-            {{ item.score }} / 10
+            {{ item.score + ' / 10' }}
           </h4>
-          <div class="main-slider__actions">
-            <button>Start watching EP1</button>
-            <button>Watch later</button>
+          <div class="main-slider__actions _flex _ai-c _gap-8 _pb-32">
+            <link-component
+              url="{{ item.url }}"
+              class="_button-1 _flex _ai-c _jc-c _gap-4"
+              style="max-width: 240px;"
+            >
+              <i class="material-icons">play_arrow</i>
+              Start watching EP1
+            </link-component>
+            <button-component
+              ng-click="handleClick()"
+              class="_button-2 _flex _ai-c _jc-c"
+              style="max-width: 60px;"
+            >
+              <i class="material-icons">bookmark</i>
+            </button-component>
           </div>
         </div>
         <div class="_image">
           <img ng-src="{{item.images.jpg.large_image_url}}" alt="">
         </div>
       </div>
-    </slider>
+    </slider-component>
   </div>
 </section>

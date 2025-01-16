@@ -1,3 +1,3 @@
 'use strict'
 
-angular.module('slider', []);
+angular.module('sliderModule', []);

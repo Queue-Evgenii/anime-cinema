@@ -1,9 +1,9 @@
 /* padding bottom */
-._pb-8 {
-  padding-bottom: 8px;
-}
 ._pb-16 {
   padding-bottom: 16px;
+}
+._pb-32 {
+  padding-bottom: 32px;
 }
 
 /* padding X axis */

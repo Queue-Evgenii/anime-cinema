@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('slider')
+angular.module('sliderModule')
   .service('swipe', ['sliderUtils', function(sliderUtils) {
     this.setup = function(slider, slides, slideWidth, options, currentIndex, setCurrentIndex) {
       let startX = 0;

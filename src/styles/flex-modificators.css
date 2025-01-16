@@ -19,6 +19,9 @@
   justify-content: space-between;
 }
 
+._gap-4 {
+  gap: 4px;
+}
 ._gap-8 {
   gap: 8px;
 }
@@ -38,6 +41,6 @@
 ._flex-full {
   flex: 1 1 100%;
 }
-._flex-auto-70 {
+._flex-70-auto {
   flex: 1 1 70%;
 }

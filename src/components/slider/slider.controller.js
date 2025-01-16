@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('slider')
+angular.module('sliderModule')
   .controller(
     'sliderController', [
       '$scope', '$timeout', 'navigation', 'swipe',

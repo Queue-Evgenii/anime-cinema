@@ -1,0 +1,20 @@
+._button-1,
+._button-2 {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: .750rem 1rem;
+  border-width: 2px;
+  border-style: solid;
+}
+
+._button-1 {
+  border-color: transparent;
+  background-color: #ff640a;
+  color: #000;
+}
+._button-2 {
+  border-color: #ff640a;
+  background-color: transparent;
+  color: #ff640a;
+}
