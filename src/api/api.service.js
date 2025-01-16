@@ -1,15 +1,25 @@
 'use strict'
 
 angular.module('api')
-  .service('animeApi', ['$http', function($http) {
-    const apiUrl = 'https://api.jikan.moe/v4/top/anime';
+  .service('animeGetApi', ['$http', function($http) {
+    const apiUrl = 'https://api.jikan.moe/v4/';
 
-    this.getTopAnime = (params) => {
+    const getRequest = (url, params) => {
       return new Promise((resolve, reject) => {
         $http
-          .get(apiUrl, { params })
+          .get(url, { params })
           .then(res => resolve(res.data))
           .catch(err => reject(err));
-      })
+      });
+    }
+
+    this.getTopAnime = (params) => {
+      const endpoint = 'top/anime';
+      return getRequest(apiUrl + endpoint, params);
     };
+
+    this.getAnimeByDay = (params) => {
+      const endpoint = 'schedules';
+      return getRequest(apiUrl + endpoint, params);
+    }
   }]);
