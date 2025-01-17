@@ -18,7 +18,7 @@
         <h2 class="_py-16 _mb-16">{{key}}</h2>
         <ul class="_flex _ai-c _flex-wrap _row-gap-16 _alt-gap-32">
           <li ng-repeat="item in value" class="recent-list__item _flex-half">
-            <link-component url="{{ item.url }}" class="_flex _gap-16">
+            <link-component url="{{ '#!/anime/' + item.mal_id }}" class="_flex _gap-16">
               <div class="_image _flex-30 recent-list__icon-parent">
                 <img src="{{ item.images.jpg.large_image_url }}" alt="">
                 <span class="recent-list__white"></span>

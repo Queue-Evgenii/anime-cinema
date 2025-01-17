@@ -22,4 +22,9 @@ angular.module('api')
       const endpoint = 'schedules';
       return getRequest(apiUrl + endpoint, params);
     }
+    
+    this.getAnimeById = (id) => {
+      const endpoint = `anime/${id}`;
+      return getRequest(apiUrl + endpoint, {});
+    };
   }]);

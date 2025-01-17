@@ -4,4 +4,5 @@ angular.module('animeCinemaApp', [
   'ngRoute',
   'defaultLayout',
   'homeView',
+  'animeView'
 ]);
