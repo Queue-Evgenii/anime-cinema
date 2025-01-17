@@ -1,10 +1,10 @@
 .footer-default__top,
 .footer-default__bottom {
   padding: 24px 0;
+  border-top: 1px solid #4a4e58;
 }
-
 .footer-default__top {
-  border-bottom: 1px solid #4a4e58;
+  margin-top: 32px;
 }
 
 .footer-default__top nav h4 {

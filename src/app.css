@@ -26,7 +26,8 @@ body {
   font-size: 2rem;
 }
 
-._image img {
+._image img,
+._image iframe {
 	width: 100%;
 	object-fit: contain;
 }

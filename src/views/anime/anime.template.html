@@ -1,3 +1,84 @@
-<div>
-  {{animeItem.mal_id}}
-</div>
+<section class="_py-16 _pb-32">
+  <div class="_container _flex">
+    <div class="_flex-70">
+      <div class="_pb-16">
+        <h2 class="main-slider__title _title">{{ animeItem.title }}</h2>
+        <h3 ng-if="animeItem.title !== animeItem.title_english" class="main-slider__title-en">{{ animeItem.title_english }}</h3>
+        <h3 ng-if="animeItem.title !== animeItem.title_japanese	" class="main-slider__title-en">{{ animeItem.title_japanese	 }}</h3>
+      </div>
+      <div class="_flex _ai-c _gap-16 _pb-16">
+        <h4 class="main-slider__rating">{{ animeItem.rating }}</h4>
+        <span>|</span>
+        <div ng-if="animeItem.themes || animeItem.demographics" class="main-slider__genres _flex _ai-c _gap-8">
+          <h4>{{ animeItem.themes | joinThemes }}</h4>
+          <span>✦</span>
+          <h4>{{ animeItem.demographics | joinThemes }}</h4>
+        </div>
+      </div>
+      <h4 class="main-slider__score _pb-16">
+        <span>★</span>
+        {{ animeItem.score + ' / 10' }}
+      </h4>
+      <h4 class="main-slider__score _pb-8">
+        {{ 'Source: ' + animeItem.source }}
+      </h4>
+      <div class="_pb-16 _flex _ai-c _gap-8">
+        <h4>Status:</h4>
+        <p class="main-slider__rating" style="width: fit-content;">{{ animeItem.status }}</p>
+      </div>
+      <div class="main-slider__actions _flex _ai-c _gap-8 _pb-32">
+        <link-component
+          url="{{ animeItem.url }}"
+          class="_button-1 _flex _ai-c _jc-c _gap-4"
+          style="max-width: 240px;"
+        >
+          <i class="material-icons">play_arrow</i>
+          Start watching EP1
+        </link-component>
+        <button-component
+          ng-click="handleClick()"
+          class="_button-2 _flex _ai-c _jc-c"
+          style="max-width: 60px;"
+        >
+          <i class="material-icons">bookmark</i>
+        </button-component>
+      </div>
+    </div>
+    <div class="_image">
+      <img src="{{animeItem.images.jpg.large_image_url}}" alt="">
+    </div>
+  </div>
+</section>
+<section class="_py-16">
+  <div class="_container _flex _f-dir-col _gap-16">
+    <h3 class="_title">Synopsis/Description:</h3>
+    <p style="line-height: 1.5; white-space: pre-wrap;">{{ animeItem.synopsis }}</p>
+  </div>
+</section>
+<section class="_py-16">
+  <div class="_container _flex _f-dir-col _gap-16">
+    <h3 class="_title">Background:</h3>
+    <p style="line-height: 1.5; white-space: pre-wrap;">{{ animeItem.background }}</p>
+  </div>
+</section><section class="_py-16">
+  <div class="_container _flex _f-dir-col _gap-16">
+    <h3 class="_title">Trailer:</h3>
+    <div class="_image">
+      <img
+        ng-if="!isPlaying"
+        src="{{ animeItem.trailer.images.large_image_url }}"
+        style="cursor: pointer;"
+        height="{{ trailerHeight }}" 
+        ng-click="playVideo()"
+      >
+      <iframe
+      height="{{ trailerHeight }}" 
+        ng-if="isPlaying"
+        ng-src="{{ animeItem.trailer.embed_url }}" 
+        frameborder="0" 
+        allowfullscreen
+      >
+      </iframe>
+  </div>
+  </div>
+</section>

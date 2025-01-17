@@ -1,4 +1,7 @@
 /* padding bottom */
+._pb-8 {
+  padding-bottom: 8px;
+}
 ._pb-16 {
   padding-bottom: 16px;
 }
@@ -11,6 +14,10 @@
 }
 
 /* padding X axis */
+._px-16 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
 ._px-32 {
   padding-left: 32px;
   padding-right: 32px;
