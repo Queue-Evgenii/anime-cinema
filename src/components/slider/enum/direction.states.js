@@ -1,4 +1,4 @@
-'use strick'
+'use strict'
 
 angular.module('sliderModule')
   .constant('directionStates', {

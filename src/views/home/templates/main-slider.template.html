@@ -2,9 +2,9 @@
   <div class="_container">
     <slider-component options="options">
       <div ng-repeat="item in slides" class="_flex _ai-e _px-64">
-        <div class="main-slider__info _flex-70-auto">
+        <div class="main-slider__info _flex-70">
           <div class="_pb-16">
-            <h2 class="main-slider__title">{{ item.title }}</h2>
+            <h2 class="main-slider__title _title">{{ item.title }}</h2>
             <h3 ng-if="item.title !== item.title_english" class="main-slider__title-en">{{ item.title_english }}</h3>
           </div>
           <div class="_flex _ai-c _gap-16 _pb-16">

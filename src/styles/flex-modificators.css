@@ -18,6 +18,9 @@
 ._jc-sb {
   justify-content: space-between;
 }
+._jc-r {
+  justify-content: right;
+}
 
 ._gap-4 {
   gap: 4px;
@@ -34,6 +37,9 @@
 ._gap-64 {
   gap: 64px;
 }
+._row-gap-16 {
+  row-gap: 16px;
+}
 
 ._flex-auto {
   flex: 1 1 auto;
@@ -41,6 +47,24 @@
 ._flex-full {
   flex: 1 1 100%;
 }
-._flex-70-auto {
+._flex-half {
+  flex: 0 1 50%;
+}
+._flex-fit {
+  flex: 0 0 fit-content;
+}
+._flex-30 {
+  flex: 1 1 30%;
+}
+._flex-60 {
+  flex: 1 1 60%;
+}
+._flex-70 {
   flex: 1 1 70%;
+}
+
+
+
+._flex-wrap {
+  flex-wrap: wrap;
 }

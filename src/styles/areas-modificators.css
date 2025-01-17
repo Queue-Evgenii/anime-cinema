@@ -5,6 +5,10 @@
 ._pb-32 {
   padding-bottom: 32px;
 }
+/* margin bottom */
+._mb-16 {
+  margin-bottom: 16px;
+}
 
 /* padding X axis */
 ._px-32 {
@@ -14,4 +18,22 @@
 ._px-64 {
   padding-left: 64px;
   padding-right: 64px;
+}
+
+
+/* padding Y axis */
+._py-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
+/* gaps by padding and margin */
+._alt-gap-32 {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+._alt-gap-32 > * {
+  padding-left: 16px;
+  padding-right: 16px;
 }

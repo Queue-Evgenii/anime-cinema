@@ -1,1 +1,36 @@
-hui
+<section>
+  <div class="_container">
+    <header class="_flex _ai-c _jc-sb _gap-16">
+      <h1 class="_title _flex _ai-c _gap-8 _flex-auto">
+        <i class="material-icons">video_library</i>
+        New Episodes
+      </h1>
+      <link-component
+        url="{{ item.url }}"
+        class="_button-link _flex _ai-c _jc-r _gap-4 _flex-fit"
+      >
+        Start watching EP1
+        <i class="material-icons">chevron_right</i>
+      </link-component>
+    </header>
+    <div class="recent-list__content _flex _f-dir-col _gap-32">
+      <div ng-repeat="(key, value) in recentEpLists">
+        <h2 class="_py-16 _mb-16">{{key}}</h2>
+        <ul class="_flex _ai-c _flex-wrap _row-gap-16 _alt-gap-32">
+          <li ng-repeat="item in value" class="_flex-half">
+            <link-component url="{{ item.url }}" class="_flex _gap-16">
+              <div class="_image _flex-30">
+                <img src="{{ item.images.jpg.large_image_url }}" alt="">
+              </div>
+              <div class="_flex-70 _flex _f-dir-col _gap-8">
+                <h3>{{ item.title }}</h3>
+                <h4 ng-if="item.episodes">{{ 'Episodes: ' + item.episodes }}</h4>
+                <span class="recent-list__duration">{{ item.duration }}</span>
+              </div>
+            </link-component>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
