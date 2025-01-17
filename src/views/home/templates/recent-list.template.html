@@ -17,15 +17,25 @@
       <div ng-repeat="(key, value) in recentEpLists">
         <h2 class="_py-16 _mb-16">{{key}}</h2>
         <ul class="_flex _ai-c _flex-wrap _row-gap-16 _alt-gap-32">
-          <li ng-repeat="item in value" class="_flex-half">
+          <li ng-repeat="item in value" class="recent-list__item _flex-half">
             <link-component url="{{ item.url }}" class="_flex _gap-16">
-              <div class="_image _flex-30">
+              <div class="_image _flex-30 recent-list__icon-parent">
                 <img src="{{ item.images.jpg.large_image_url }}" alt="">
+                <span class="recent-list__white"></span>
+                <span class="recent-list__visible-onhover recent-list__icon _flex _ai-c">
+                  <i class="material-icons">play_arrow</i>
+                </span>
               </div>
               <div class="_flex-70 _flex _f-dir-col _gap-8">
                 <h3>{{ item.title }}</h3>
-                <h4 ng-if="item.episodes">{{ 'Episodes: ' + item.episodes }}</h4>
-                <span class="recent-list__duration">{{ item.duration }}</span>
+                <h4 ng-if="item.episodes" class="recent-list__hidden-onhover">{{ 'Episodes: ' + item.episodes }}</h4>
+                <span class="recent-list__duration recent-list__hidden-onhover">{{ item.duration }}</span>
+                <div class="recent-list__visible-onhover _flex-full _flex _ai-e">
+                  <span class="_flex _ai-c _gap-4">
+                    <i class="material-icons">play_arrow</i>
+                    PLAY
+                  </span>
+                </div>
               </div>
             </link-component>
           </li>
